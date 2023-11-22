@@ -17,6 +17,7 @@
 #ifdef NDEBUG
     #define DBG(x)
     #define INFO(x)
+    #define INFO_REL(x) do { std::cout << x << std::endl; } while (0)
 #else
     #define DBG(x) do { std::cerr << __FILE__  << ':' << __LINE__ << ' ' << x << std::endl; } while (0)
     #define VRB(x) do { if (verbose) { std::cout << x << std::endl; } } while (0)
