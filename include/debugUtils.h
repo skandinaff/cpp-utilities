@@ -14,10 +14,9 @@
 #include <sys/types.h> // uint32_t, uint64_t, etc
 
 // Debug defines...
-#ifndef NDEBUG
+#ifdef NDEBUG
     #define DBG(x)
     #define INFO(x)
-    #define VRB(x)
 #else
     #define DBG(x) do { std::cerr << __FILE__  << ':' << __LINE__ << ' ' << x << std::endl; } while (0)
     #define VRB(x) do { if (verbose) { std::cout << x << std::endl; } } while (0)
