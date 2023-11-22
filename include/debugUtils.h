@@ -14,17 +14,16 @@
 #include <sys/types.h> // uint32_t, uint64_t, etc
 
 // Debug defines...
-//#ifndef NDEBUG
-//#  define DBG(x)
-//#else
-#define DBG(x) do { std::cerr << __FILE__  << ':' << __LINE__ << ' ' << x << std::endl; } while (0)
-//#endif // NDEBUG
+#ifndef NDEBUG
+    #define DBG(x)
+#else
+    #define DBG(x) do { std::cerr << __FILE__  << ':' << __LINE__ << ' ' << x << std::endl; } while (0)
+    #define VRB(x) do { if (verbose) { std::cout << x << std::endl; } } while (0)
+    #define ERR(x) do { std::cerr << "ERROR: " << x << std::endl; } while (0)
+    #define WRN(x) do { std::cerr << "WARNING: " << x << std::endl; } while (0)
+    #define INFO(x) do { std::cout << x << std::endl; } while (0)
 
-#define VRB(x) do { if (verbose) { std::cout << x << std::endl; } } while (0)
-#define ERR(x) do { std::cerr << "ERROR: " << x << std::endl; } while (0)
-#define WRN(x) do { std::cerr << "WARNING: " << x << std::endl; } while (0)
-#define INFO(x) do { std::cout << x << std::endl; } while (0)
-
+#endif // NDEBUG
 
 namespace debug {
     typedef unsigned int uint32;
