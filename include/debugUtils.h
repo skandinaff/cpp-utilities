@@ -24,6 +24,7 @@
     #define ERR(x) do { std::cerr << "ERROR: " << x << std::endl; } while (0)
     #define WRN(x) do { std::cerr << "WARNING: " << x << std::endl; } while (0)
     #define INFO(x) do { std::cout << x << std::endl; } while (0)
+    #define INFO_REL(x)
 
 #endif // NDEBUG
 
